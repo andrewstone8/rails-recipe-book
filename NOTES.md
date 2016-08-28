@@ -20,3 +20,7 @@ Additionally ingredients would need to be unique so that the first user that add
 This will force a join model between ingredients and recipes and provide an easy way to group recipes by ingredients, which would be a great view to implement. 
 
 Associating some user-centric data regarding recipes such as ratings or comments would further fill out the domain and provide some great learning experiences.
+
+
+ - I want to be able to add a recipe, first the name, then add the ingredients from an existing list, but you can add a new ingredient if it is not on the list.
+
