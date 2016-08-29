@@ -6,5 +6,6 @@ class IngredientsController < ApplicationController
   end
 
   def show
+    @ingredient = Ingredient.find_by(params[:id])
   end
 end
