@@ -1,4 +1,5 @@
-<h1>Recipes</h1>
+<div class="list-group">
   <% @recipes.each do |r| %>
-    <li><%=link_to("#{r.name}","/recipes/#{r.id}") %></li>
+    <a href="<% link_to("#{r.name}","/recipes/#{r.id}") %>" class="list-group-item"><%= "#{r.name}" %></a>
   <% end %>
+</div>
