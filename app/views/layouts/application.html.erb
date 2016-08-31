@@ -16,101 +16,63 @@
 
     <!-- Custom CSS -->
     <style>
-                /*!
-         * Start Bootstrap - Shop Item (http://startbootstrap.com/)
-         * Copyright 2013-2016 Start Bootstrap
-         * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
-         */
+        /*!
+       * Start Bootstrap - Shop Item (http://startbootstrap.com/)
+       * Copyright 2013-2016 Start Bootstrap
+       * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+       */
 
-        body {
-            padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-        }
+      body {
+          padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+      }
 
-        .thumbnail img {
-            width: 100%;
-        }
+      .thumbnail img {
+          width: 100%;
+      }
 
-        .ratings {
-            padding-right: 10px;
-            padding-left: 10px;
-            color: #d17581;
-        }
+      .ratings {
+          padding-right: 10px;
+          padding-left: 10px;
+          color: #d17581;
+      }
 
-        .thumbnail {
-            padding: 0;
-        }
+      .thumbnail {
+          padding: 0;
+      }
 
-        .thumbnail .caption-full {
-            padding: 9px;
-            color: #333;
-        }
+      .thumbnail .caption-full {
+          padding: 9px;
+          color: #333;
+      }
 
-        footer {
-            margin: 50px 0;
-        }
-    </style>
+      footer {
+          margin: 50px 0;
+      }
+
+  </style>
 
 </head>
 
 <body>
-    <%= content_tag(:div, flash[:error], :id => "flash_error") if flash[:error] %>
-      <%= content_tag(:div, flash[:notice], :id => "flash_notice") if flash[:notice] %>
-      <%= content_tag(:div, flash[:alert], :id => "flash_alert") if flash[:alert] %>
+    
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Recipe Book</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <% if !user_signed_in? %>
-                    <li>
-                        <a href="#">Facebook Signin</a>
-                    </li>
-                    <li>
-                        <%= link_to "Sign up", new_user_registration_path %>
-                    </li>
-                    <li>
-                        <%= link_to "Sign in", new_user_session_path %>
-                    </li>
-                    <% else %>
-                    <li>
-                        <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-                    </li>
-                    <% end %>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+    <%= render 'layouts/nav' %>
 
     <!-- Page Content -->
     <div class="container">
 
         <div class="row">
 
+            <!-- SideBar Menu -->
             <div class="col-md-3">
-                <p class="lead">Recipes</p>
-                
+                <%= render 'layouts/sidebar' %>
             </div>
 
             <div class="col-md-9">
-                
                 <%= yield %>            
-
             </div> <!-- end container -->
 
-        </div>
+        </div> <!-- end row -->
 
     </div>
     <!-- /.container -->
@@ -123,7 +85,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <p>Copyright &copy; Rails Recipe Book 2016</p>
                 </div>
             </div>
         </footer>

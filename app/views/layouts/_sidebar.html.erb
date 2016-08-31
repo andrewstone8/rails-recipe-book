@@ -1,0 +1,11 @@
+<div class="list-group">
+  <% if user_signed_in? %>
+    <p class="lead"> Recipes</p>
+      <% @recipes.each do |r| %>
+        <a href="<% link_to("#{r.name}","/recipes/#{r.id}") %>" class="list-group-item"><%= "#{r.name}" %></a>
+    <% end %>
+
+  <% else %>
+    <p class="lead"> </p>
+  <% end %>
+</div>
