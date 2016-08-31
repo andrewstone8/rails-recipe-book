@@ -4,7 +4,5 @@ Rails.application.routes.draw do
   resources :recipes do
     resources :ingredients
   end
-  get "/users/sign_out" => "devise/sessions#destroy"
 
-  
 end
