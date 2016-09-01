@@ -10,3 +10,8 @@ Recipe.create([{ name: 'lasgna' },
   { name: 'Mac and cheese' },
   { name: 'Philly cheesesteak' }
   ])
+
+Ingredient.create([{ name: 'chicken' }, 
+  { name: 'cheese' },
+  { name: 'steak' }
+  ])

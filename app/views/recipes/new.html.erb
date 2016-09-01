@@ -1,1 +1,7 @@
-<h1>Users can create a new recipe here.</h1>
+<%= form_for @recipe do |f| %>
+  <%= f.label "Name" %>
+  <%= f.text_field :name %><br />
+
+  
+  <%= f.submit %> <br />
+<% end %>

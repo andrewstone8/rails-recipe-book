@@ -7,9 +7,20 @@ class RecipesController < ApplicationController
   end
 
   def new
-    @recipe = current_user.recipes.build
+    @recipe = Recipe.new
   end
 
   def show
+    @recipes = current_user.recipes.build
+  end
+
+  def create
+    @recipe = Recipe.create(recipe_params)
+  end
+
+  private
+
+  def recipe_params
+    params.require(:recipe).permit(:name, ingredient_ids:[], ingredients_attributes:[:name])
   end
 end
